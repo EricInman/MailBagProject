@@ -10,8 +10,7 @@ export class Worker {
         Worker.serverInfo = inServerInfo;
     }
 
-    public sendMessage(inOptions: SendMailOptions):
-    Promise<string> {
+    public sendMessage(inOptions: SendMailOptions): Promise<string> {
       return new Promise((inResolve, inReject) => {
         const transport: Mail = nodemailer.createTransport(Worker.serverInfo.smtp);
         transport.sendMail(inOptions, 
